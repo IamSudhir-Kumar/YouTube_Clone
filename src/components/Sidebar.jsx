@@ -11,8 +11,8 @@ const Sidebar = () => {
             direction="row"
             sx={{
                 overflowY: 'auto',
-                height: { xs: 'auto', md: '92%' }, // Corrected 'sx' typo
-                flexDirection: { md: 'column' }, // Corrected 'coloumn' to 'column'
+                height: { xs: 'auto', md: '92%' }, 
+                flexDirection: { md: 'column' }, 
             }}
         >
             {categories.map((category, index) => (
