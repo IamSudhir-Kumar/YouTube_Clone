@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 
-import { Video, ChannelCard } from "./";
+import { Videos, ChannelCard } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const ChannelDetail = () => {
@@ -10,7 +10,7 @@ const ChannelDetail = () => {
   const [videos, setVideos] = useState(null);
 
   const { id } = useParams();
-console.log(channelDetail, videos);
+
   useEffect(() => {
     const fetchResults = async () => {
       const data = await fetchFromAPI(`channels?part=snippet&id=${id}`);
@@ -37,7 +37,7 @@ console.log(channelDetail, videos);
       </Box>
       <Box p={2} display="flex">
       <Box sx={{ mr: { sm: '100px' } }}/>
-        <Video videos={videos} />
+        <Videos videos={videos} />
       </Box>
     </Box>
   );
